@@ -5,17 +5,17 @@ const Navbar = () => {
 
     return (
 <> 
-<Flex justifyContent={"space-between"} flexDirection={"row"}    > 
-<Box  height={"fit-content"} w='100%'  p={4} color='black' boxShadow="dark-lg"  rounded="md" bg="white"> 
-<Box textAlign={'start'}> 
+<Flex justifyContent={"space-between"} flexDirection={"row"}     
+  height={"fit-content"} w='100%'  p={4} color='black' boxShadow="dark-lg"  rounded="md" bg="white"> 
+ 
 
 <Text  fontSize="3xl" fontFamily={'mono'}>   FIND THE FLAT </Text>
-</Box>
-<Box textAlign={"end"}> 
+
+
 
 <Button  variant='ghost' colorScheme='gray.100'> Login/ Signup </Button>
-</Box>
-</Box>
+
+
 </Flex>
 
 
