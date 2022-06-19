@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 
 
 
-import Homepage from '../components/Homepage'
+import Homepage from './Homepage'
 // import {
 //   BrowserRouter,
 //   Routes,

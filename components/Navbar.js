@@ -12,10 +12,12 @@ const Navbar = () => {
 <Text  fontSize="3xl" fontFamily={'mono'}>   FIND THE FLAT </Text>
 
 
+<Box flexDirection={"row"} > 
+<Button fontStyle={'mono'} variant='ghost' colorScheme='gray.100' > Login/SignUp </Button> 
 
-<Button  variant='ghost' colorScheme='gray.100'> Login/ Signup </Button>
 
 
+</Box>
 </Flex>
 
 
