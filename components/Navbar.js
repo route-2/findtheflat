@@ -4,22 +4,22 @@ import { useDisclosure,useState } from '@chakra-ui/react';
 import { ModalFooter,InputGroup,InputLeftAddon,InputRightAddon,PinInputField,PinInput,ModalHeader,ModelContent,Modal,ModalBody,ModalOverlay } from "@chakra-ui/react";
 import { Flex, Box, Text,Input, Button,Heading } from '@chakra-ui/react';
 const Navbar = () => {
-  const OverlayTwo = () => (
-    <ModalOverlay
-      bg='none'
-      backdropFilter='auto'
-      backdropInvert='80%'
-      backdropBlur='2px'
-    />
-  )
-  const OverlayOne = () => (
-    <ModalOverlay
-      bg='blackAlpha.300'
-      backdropFilter='blur(10px) hue-rotate(90deg)'
-    />
-  )
-  const [overlay, setOverlay] = useState()
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  // const OverlayTwo = () => (
+  //   <ModalOverlay
+  //     bg='none'
+  //     backdropFilter='auto'
+  //     backdropInvert='80%'
+  //     backdropBlur='2px'
+  //   />
+  // )
+  // const OverlayOne = () => (
+  //   <ModalOverlay
+  //     bg='blackAlpha.300'
+  //     backdropFilter='blur(10px) hue-rotate(90deg)'
+  //   />
+  // )
+  // const [overlay, setOverlay] = useState()
+  // const { isOpen, onOpen, onClose } = useDisclosure()
     return (
 <> 
 <Flex justifyContent={"space-between"} flexDirection={"row"}     
@@ -39,7 +39,7 @@ const Navbar = () => {
         >
          Login / SignUp
         </Button>
-        <Modal isCentered isOpen={isOpen} onClose={onClose}>
+        {/* <Modal isCentered isOpen={isOpen} onClose={onClose}>
           {overlay}
           <ModalContent>
             <ModalHeader>Login/SignUp</ModalHeader>
@@ -58,7 +58,7 @@ const Navbar = () => {
             </ModalFooter>
           </ModalContent>
         </Modal>
-
+ */}
 
 
 </Box>
