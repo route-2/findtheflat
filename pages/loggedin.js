@@ -1,7 +1,7 @@
 import { Flex,Center,Divider, Box,ModalOverlay, Text,Input,Image,Select, Button, ButtonGroup } from '@chakra-ui/react';
 import React from 'react';
 import { useDisclosure,useState } from '@chakra-ui/react';
-import { Modal,Radio,RadioGroup,Stack, ModalContent,ModalHeader,ModalBody,ModalCloseButton,ModalFooter, InputGroup,InputLeftElement, } from '@chakra-ui/react';
+import { Modal,Radio,Link,RadioGroup,Stack, ModalContent,ModalHeader,ModalBody,ModalCloseButton,ModalFooter, InputGroup,InputLeftElement, } from '@chakra-ui/react';
 import { ChevronLeftIcon,TriangleDownIcon, ChevronRightIcon, SearchIcon,PhoneIcon, } from '@chakra-ui/icons';
 import {
     Table,
@@ -45,7 +45,7 @@ return(
   height={"fit-content"} w='100%'  p={4} color='black' boxShadow="dark-lg"  rounded="md" bg="purple.200"> 
  
 
-<Text  fontSize="3xl" fontFamily={'mono'}>   FIND THE FLAT </Text>
+ <Text  fontSize="3xl" fontFamily={'mono'}>   FIND THE FLAT </Text> 
 
 
 <Box flexDirection={"row"} > 
@@ -94,6 +94,7 @@ return(
            <Button bg={'pink.100'}> 1 BHK </Button> <Button bg={'pink.100'}> 2 BHK </Button> <Button bg={'pink.100'}> 3 BHK </Button> <Button bg={'pink.100'}> 4 BHK </Button> <Button bg={'pink.100'}> 4+ BHK </Button> </ButtonGroup> 
           </Flex>
           <Text mt={'20px'} ml={'20px'} fontSize={'xl'}> Rent Range </Text>
+          <Flex flexDirection={'row'}> <Input variant='flushed' width={'50%'} /> To <Input variant='flushed' width={'50%'} /> </Flex>
           <Flex mt={'20px'} ml={'20px'} flexDirection={'column'}>
           <Text fontSize={'xl'}> Availability </Text>
           <RadioGroup mt={'10px'} onChange={setValue} value={value}>
@@ -175,14 +176,14 @@ return(
  <Flex width={"50%"} flexDirection={'column'} > 
  
  <Flex  mt={'50px'} flexDirection={"row"} justifyContent={'space-between'}>
- <Flex textAlign={'center'} > <Image src='https://i.ibb.co/f4gLsDc/Sofa.png'/> <Text mt={'30px'} ml={'15px'} fontSize={'xl'}> inches </Text> </Flex> <Divider orientation='vertical' />
-       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/VMC7c46/Apartment.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> inches </Text> </Flex> <Divider orientation='vertical' />
+ <Flex textAlign={'center'} > <Image src='https://i.ibb.co/f4gLsDc/Sofa.png'/> <Text mt={'30px'} ml={'15px'} fontSize={'xl'}> Semi Furnished </Text> </Flex> <Divider orientation='vertical' />
+       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/VMC7c46/Apartment.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> 2BHK </Text> </Flex> <Divider orientation='vertical' />
        
         
       </Flex>
       <Flex mt={'70px'} flexDirection={"row"} justifyContent={'space-between'}>
-       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/Bngkf7J/Vector.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> inches </Text> </Flex> <Divider orientation='vertical' />
-       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/FWXmPjg/Lease.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> inches </Text> </Flex> <Divider orientation='vertical' />
+       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/Bngkf7J/Vector.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> ALL  </Text> </Flex> <Divider orientation='vertical' />
+       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/FWXmPjg/Lease.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> Ready to Move  </Text> </Flex> <Divider orientation='vertical' />
 
        
         

@@ -56,23 +56,28 @@ return(
  <Box borderWidth={"20px"} borderColor={'purple.200'} > <Image  src="https://picsum.photos/400/300/?blur"/>  </Box>
  
  </Flex>
- <Flex width={"50%"} flexDirection={'column'} > 
+ <Flex width={"50%"} borderwidth={'2px'} borderColor={'white'} flexDirection={'column'} > 
  
  <Flex  mt={'50px'} flexDirection={"row"} justifyContent={'space-between'}>
- <Flex textAlign={'center'} > <Image src='https://i.ibb.co/f4gLsDc/Sofa.png'/> <Text mt={'30px'} ml={'15px'} fontSize={'xl'}> inches </Text> </Flex> <Divider orientation='vertical' />
-       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/VMC7c46/Apartment.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> inches </Text> </Flex> <Divider orientation='vertical' />
+ <Flex textAlign={'center'} > <Image src='https://i.ibb.co/f4gLsDc/Sofa.png'/> <Text mt={'30px'} ml={'15px'} fontSize={'xl'}> Semi Furnished </Text> </Flex> <Divider orientation='vertical' />
+       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/VMC7c46/Apartment.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> 2 BHK </Text> </Flex> <Divider orientation='vertical' />
        
         
       </Flex>
       <Flex mt={'70px'} flexDirection={"row"} justifyContent={'space-between'}>
-       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/Bngkf7J/Vector.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> inches </Text> </Flex> <Divider orientation='vertical' />
-       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/FWXmPjg/Lease.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> inches </Text> </Flex> <Divider orientation='vertical' />
+       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/Bngkf7J/Vector.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> All </Text> </Flex> <Divider orientation='vertical' />
+       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/FWXmPjg/Lease.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> Ready to Move  </Text> </Flex> <Divider orientation='vertical' />
 
        
         
       </Flex>
       
 
+ 
+ 
+ 
+
+ </Flex>
  <Flex mt={'40px'} flexDirection={'row'}  justifyContent={'space-between'}> <Button width={'250px'}  > Contact Owner </Button> 
  <Button borderwidth={'1px'} width={'50px'}  borderColor={'white'} variant={'outline'} > <Image src='https://i.ibb.co/h8yt49m/Vector-1.png'/></Button> <Divider orientation='vertical' />
  <Button borderwidth={'1px'} width={'50px'} borderColor={'white'} variant={'outline'} mr={'40px'}> <Image src='https://i.ibb.co/NWgrV9V/Location.png'/></Button>
@@ -80,11 +85,6 @@ return(
  
  
  </Flex>
- 
- 
-
- </Flex>
- 
  
  
  

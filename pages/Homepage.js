@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import Login from './Login';
 import { Flex, Box,ModalOverlay, Text,Input,Image,Select, Button } from '@chakra-ui/react';
 import Navbar from '../components/Navbar';
 import ChakraCarousel from "../components/ChakraCarousel";
@@ -21,7 +21,8 @@ import axios from 'axios';
     
   
 const url = 'https://findtheflat.online/'
-const[output,setOutput]=useState([])        
+const[output,setOutput]=useState([])       
+ 
 
 useEffect(() => {axios.get(url).then(res=>{
   setOutput(res.data.data)
