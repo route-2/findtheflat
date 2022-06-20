@@ -4,11 +4,12 @@ import { Flex, Box,ModalOverlay, Text,Input,Image,Select, Button } from '@chakra
 import Navbar from '../components/Navbar';
 import ChakraCarousel from "../components/ChakraCarousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { ChevronLeftIcon,ChevronRightIcon, SearchIcon } from '@chakra-ui/icons';
 import Carousel from 'react-elastic-carousel';
+import axios from 'axios';
  const Homepage = () => {
     const items = [
       {id: 1, title: 'item #1'},
@@ -19,7 +20,20 @@ import Carousel from 'react-elastic-carousel';
     ]
     
   
+const url = 'https://findtheflat.online/'
+const[output,setOutput]=useState([])        
+
+useEffect(() => {axios.get(url).then(res=>{
+  setOutput(res.data.data)
+})})
+
+
+
+
+console.log(output)
+  
 return (
+
 <>
 
 <Flex  flexDirection={"column"} justifyContent={"space-between"} padding={'10px'} > 

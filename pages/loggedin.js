@@ -1,4 +1,4 @@
-import { Flex,Center,Divider, Box,ModalOverlay, Text,Input,Image,Select, Button } from '@chakra-ui/react';
+import { Flex,Center,Divider, Box,ModalOverlay, Text,Input,Image,Select, Button, ButtonGroup } from '@chakra-ui/react';
 import React from 'react';
 import { useDisclosure,useState } from '@chakra-ui/react';
 import { Modal,Radio,RadioGroup,Stack, ModalContent,ModalHeader,ModalBody,ModalCloseButton,ModalFooter, InputGroup,InputLeftElement, } from '@chakra-ui/react';
@@ -88,9 +88,10 @@ return(
             <ModalHeader> FILTERS </ModalHeader> </Center>
             <Text fontStyle={'mono'} fontSize={'xl'} ml={'20px'}> Apartment Type </Text>
           <Flex mt={'20px'} justifyContent={'space-between'} flexDirection={'column'}> 
-          <Flex flexDirection={'row'} ml={'4px'} >
-          <Button bg={'pink.100'} > 1 BHK </Button>
-           <Button bg={'pink.100'}> 1 BHK </Button> <Button bg={'pink.100'}> 2 BHK </Button> <Button bg={'pink.100'}> 3 BHK </Button> <Button bg={'pink.100'}> 4 BHK </Button> <Button bg={'pink.100'}> 4+ BHK </Button> </Flex>
+          
+          <ButtonGroup ml={'8px'} mr={'8px'} > 
+         
+           <Button bg={'pink.100'}> 1 BHK </Button> <Button bg={'pink.100'}> 2 BHK </Button> <Button bg={'pink.100'}> 3 BHK </Button> <Button bg={'pink.100'}> 4 BHK </Button> <Button bg={'pink.100'}> 4+ BHK </Button> </ButtonGroup> 
           </Flex>
           <Text mt={'20px'} ml={'20px'} fontSize={'xl'}> Rent Range </Text>
           <Flex mt={'20px'} ml={'20px'} flexDirection={'column'}>
