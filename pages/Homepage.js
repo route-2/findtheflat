@@ -27,7 +27,7 @@ return (
 <Navbar/>
 <Box mt={'50px'}>    
 <Carousel>
-        {items.map(item => <div key={item.id} ><img width={"300px"}  src="https://picsum.photos/id/237/200/300"/> </div>)}
+        {items.map(item => <div key={item.id} ><img width={"300px"}  src="https://picsum.photos/600/500/?blur=2"/> </div>)}
       </Carousel>
 
   </Box>
