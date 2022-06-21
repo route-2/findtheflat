@@ -9,14 +9,20 @@ import {
   Switch,
   useColorMode,
   useColorModeValue,
+  Box,
 } from '@chakra-ui/react';
+import Navbar from './Profile';
 
 const Login = () => {
   const { toggleColorMode } = useColorMode();
   const formBackground = useColorModeValue('purple.100', 'purple.400');
 
   return (
-    <Flex h="100vh"  bgGradient='linear(purple.100 0%, orange.100 25%, yellow.100 50%)' alignItems="center" justifyContent="center">
+    <> 
+    
+
+    <Flex h="100vh"  bgGradient='linear(purple.100 0%, orange.100 25%, yellow.100 50%)' alignItems="center" flexDirection={'column'} justifyContent="center">
+    
       <Flex
         flexDirection="column"
         bg={formBackground}
@@ -56,6 +62,7 @@ const Login = () => {
         </FormControl>
       </Flex>
     </Flex>
+    </>
   );
 };
 
