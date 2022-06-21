@@ -12,11 +12,11 @@ import Carousel from 'react-elastic-carousel';
 import axios from 'axios';
  const Homepage = () => {
     const items = [
-      {id: 1, title: 'item #1',image:''},
-      {id: 2, title: 'item #2',image:''},
-      {id: 3, title: 'item #3',image:''},
-      {id: 4, title: 'item #4',image:''},
-      {id: 5, title: 'item #5',image:''}
+      {id: 1, title: 'item #1',image:'https://i.ibb.co/q5pbzSB/1.png'},
+      {id: 2, title: 'item #2',image:'https://i.ibb.co/GJX0xr6/2.png'},
+      {id: 3, title: 'item #3',image:'https://i.ibb.co/FJS77s1/3.png'},
+      {id: 4, title: 'item #4',image:'https://i.ibb.co/4Pth1qh/4.png'},
+      {id: 5, title: 'item #5',image:'https://i.ibb.co/sJ3H2cK/5.png'}
     ]
     
   
@@ -42,7 +42,7 @@ return (
 <Navbar/>
 <Box mt={'90px'}>    
 <Carousel>
-        {items.map(item => <div key={item.id} ><img width={"300px"}  src="https://picsum.photos/900/700/?blur=2"/> </div>)}
+        {items.map(item => <div key={item.id} > <img src={items.image}  /> </div>)}
       </Carousel>
 
   </Box>
