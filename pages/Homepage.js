@@ -9,6 +9,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { ChevronLeftIcon,ChevronRightIcon, SearchIcon } from '@chakra-ui/icons';
 import Carousel from 'react-elastic-carousel';
+import { useRental } from '../components/Rent.context.tsx';
 import axios from 'axios';
  const Homepage = () => {
     const items = [
@@ -28,6 +29,8 @@ useEffect(() => {axios.get(url).then(res=>{
   setOutput(res.data.data)
 })})
 
+const{sendOtp}=useRental();
+
 
 
 
@@ -41,6 +44,7 @@ return (
 
 <Navbar/>
 <Box mt={'50px'}>    
+<Button onClick={sendOtp} >Send OTP</Button>
 <Carousel>
         {items.map(item => <div key={item.id} ><img width={"300px"}  src="https://picsum.photos/600/500/?blur=2"/> </div>)}
       </Carousel>
