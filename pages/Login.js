@@ -1,76 +1,61 @@
-import { PhoneIcon } from "@chakra-ui/icons";
-import { Button,Text,HStack, ModalFooter,ModalContent,ModalCloseButton,Input, InputGroup,InputLeftAddon,InputRightAddon,PinInputField,PinInput,ModalHeader,ModelContent,Modal,ModalBody,ModalOverlay } from "@chakra-ui/react";
-import { useDisclosure } from "@chakra-ui/react";
-import { useState } from "react";
-import React from "react";
-import { Log } from "./auth.api";
-import { CheckPhone } from "./auth.api";
+import React from 'react';
+import {
+  Flex,
+  Heading,
+  Input,
+  Button,
+  FormControl,
+  FormLabel,
+  Switch,
+  useColorMode,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
-function Login () {
-    const OverlayOne = () => (
-      <ModalOverlay
-        bg='blackAlpha.300'
-        backdropFilter='blur(10px) hue-rotate(90deg)'
-      />
-    )
-  console.log(Log)
-    const OverlayTwo = () => (
-      <ModalOverlay
-        bg='none'
-        backdropFilter='auto'
-        backdropInvert='80%'
-        backdropBlur='2px'
-      />
-    )
-  
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const [overlay, setOverlay] = React.useState(<OverlayOne />)
-   const {phoneNo,SetPhoneNo} = useState('')
-   
-    return (
-      <>
-      
-        <Button
-          ml='4'
-          onClick={() => {
-            setOverlay(<OverlayTwo />)
-            onOpen()
-          }}
-        >
-         Login / SignUp
+const Login = () => {
+  const { toggleColorMode } = useColorMode();
+  const formBackground = useColorModeValue('purple.100', 'purple.400');
+
+  return (
+    <Flex h="100vh"  bgGradient='linear(purple.100 0%, orange.100 25%, yellow.100 50%)' alignItems="center" justifyContent="center">
+      <Flex
+        flexDirection="column"
+        bg={formBackground}
+        p={12}
+        borderRadius={8}
+        boxShadow="lg"
+        w={'400px'}
+        h={'400px'}
+      >
+        <Heading mb={6}>Log In</Heading>
+        <Input
+          placeholder="phone number"
+          type="email"
+          variant="filled"
+          mb={3}
+        />
+        <Input
+          placeholder="******"
+          type="otp"
+          variant="filled"
+          mb={6}
+        />
+        <Button colorScheme="purple" mb={8}>
+          Log In
         </Button>
-        <Modal isCentered isOpen={isOpen} onClose={onClose}>
-          {overlay}
-          <ModalContent>
-            <ModalHeader>Login </ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-            <Text> Hello {Log.sessionId} </Text>
-            <Text> Enter OTP sent on {Log.phone} </Text>
+        <FormControl display="flex" alignItems="center">
+          <FormLabel htmlFor="dark_mode" mb="0">
+            Enable Dark Mode?
+          </FormLabel>
+          <Switch
+            id="dark_mode"
+            colorScheme="purple"
+            size="lg"
+            onChange={toggleColorMode}
+          />
+        </FormControl>
+      </Flex>
+    </Flex>
+  );
+};
 
-            <InputGroup pt={'20px'}>
-            <HStack>
-  <PinInput bg={'purple'} type='alphanumeric' mask>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-
-  </PinInput>
-</HStack>
-  </InputGroup>
-            
-              
-<Button mt={'40px'} width={'200px'} bg={'purple.200'} borderRadius={'22px'}> Login  </Button>
-            </ModalBody>
-            <ModalFooter>
-              <Button onClick={onClose}>Close</Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      </>
-    )
-  }
-  export default Login;
+export default Login;
