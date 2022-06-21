@@ -4,7 +4,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import React from "react";
 import { Log } from "./auth.api";
-import { CheckPhone } from "./auth.api";
+import { CheckPhone,sendOtp, } from "./auth.api";
 
 function Login () {
     const OverlayOne = () => (
@@ -25,7 +25,16 @@ function Login () {
   
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [overlay, setOverlay] = React.useState(<OverlayOne />)
-   const {phoneNo,SetPhoneNo} = useState('')
+   const [phoneNo,SetPhoneNo] = useState('')
+   const[otp,setOtp]=useState('');
+
+   const clickHandler = async ()=> {
+    const dataLog = await Log(phoneNo,"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6Iis5MTkzNTM3MjYyMjciLCJzZXNzaW9uSWQiOiIyMTg2YzY0ZS02ZmUzLTRhMjEtODcyMi0wYTRkY2U5Mzg1YjgiLCJpYXQiOjE2NTU4MDQyMDgsImV4cCI6MTY1NTg5MDYwOH0.DCCDA0D5x3N5o5JKEjZQJUPi6ZeTpyXF2dVPZglBaqs",otp);
+    console.log(dataLog.error)
+    if(dataLog.error === false){
+      console.log("registred")
+    }
+  }
    
     return (
       <>
@@ -46,24 +55,13 @@ function Login () {
             <ModalCloseButton />
             <ModalBody>
             <Text> Hello {Log.sessionId} </Text>
+            <Input onChange={e=>SetPhoneNo(e.target.value)} ></Input>
             <Text> Enter OTP sent on {Log.phone} </Text>
 
-            <InputGroup pt={'20px'}>
-            <HStack>
-  <PinInput bg={'purple'} type='alphanumeric' mask>
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-    <PinInputField />
-
-  </PinInput>
-</HStack>
-  </InputGroup>
+            <Input onChange={e=>setOtp(e.target.value)} placeholder="Enter OTP" ></Input>
             
               
-<Button mt={'40px'} width={'200px'} bg={'purple.200'} borderRadius={'22px'}> Login  </Button>
+<Button onClick={clickHandler} mt={'40px'} width={'200px'} bg={'purple.200'} borderRadius={'22px'}> Login  </Button>
             </ModalBody>
             <ModalFooter>
               <Button onClick={onClose}>Close</Button>
