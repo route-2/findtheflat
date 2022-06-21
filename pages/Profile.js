@@ -33,7 +33,7 @@ const Navbar = () => {
 
     return (
 <> 
-<Flex flexDirection={'column'}> 
+<Flex  bgGradient='linear(purple.100 0%, orange.100 25%, yellow.100 50%)' h='100vh' flexDirection={'column'}> 
 <Flex justifyContent={"space-between"} flexDirection={"row"}     
   height={"fit-content"} w='100%'  p={4} color='black' boxShadow="dark-lg"  rounded="md" bg="purple.200"> 
  

@@ -37,10 +37,10 @@ return (
 
 <>
 
-<Flex  flexDirection={"column"} justifyContent={"space-between"} padding={'10px'} > 
+<Flex h={'100vh'} bgGradient='linear(purple.100 0%, orange.100 25%, yellow.100 50%)'  flexDirection={"column"}  padding={'10px'} > 
 
 <Navbar/>
-<Box mt={'50px'}>    
+<Box mt={'90px'}>    
 <Carousel>
         {items.map(item => <div key={item.id} ><img width={"300px"}  src="https://picsum.photos/600/500/?blur=2"/> </div>)}
       </Carousel>
