@@ -13,11 +13,11 @@ import { useRental } from '../components/Rent.context.tsx';
 import axios from 'axios';
  const Homepage = () => {
     const items = [
-      {id: 1, title: 'item #1'},
-      {id: 2, title: 'item #2'},
-      {id: 3, title: 'item #3'},
-      {id: 4, title: 'item #4'},
-      {id: 5, title: 'item #5'}
+      {id: 1, title: 'item #1',image:''},
+      {id: 2, title: 'item #2',image:''},
+      {id: 3, title: 'item #3',image:''},
+      {id: 4, title: 'item #4',image:''},
+      {id: 5, title: 'item #5',image:''}
     ]
     
   
@@ -40,13 +40,14 @@ return (
 
 <>
 
-<Flex  flexDirection={"column"} justifyContent={"space-between"} padding={'10px'} > 
+<Flex h={'100vh'} bgGradient='linear(purple.100 0%, orange.100 25%, yellow.100 50%)'  flexDirection={"column"}  padding={'10px'} > 
 
 <Navbar/>
+
 <Box mt={'50px'}>    
-<Button onClick={sendOtp} >Send OTP</Button>
+<Button onClick={sendOtp} >Send OTP</Button
 <Carousel>
-        {items.map(item => <div key={item.id} ><img width={"300px"}  src="https://picsum.photos/600/500/?blur=2"/> </div>)}
+        {items.map(item => <div key={item.id} ><img width={"300px"}  src="https://picsum.photos/900/700/?blur=2"/> </div>)}
       </Carousel>
 
   </Box>

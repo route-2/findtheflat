@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import { Register } from './auth.api';
 
 import React from 'react';
 import { PhoneIcon,CheckIcon } from '@chakra-ui/icons';
@@ -8,6 +8,17 @@ import { Divider, useDisclosure } from '@chakra-ui/react';
 import { ModalFooter,Image,InputLeftElement,InputRightElement, InputGroup,ModalContent,InputLeftAddon,InputRightAddon,PinInputField,PinInput,ModalHeader,ModalCloseButton,Modal,ModalBody,ModalOverlay } from "@chakra-ui/react";
 import { Flex, Box,Center, Text,Input, Button,Heading } from '@chakra-ui/react';
 const Navbar = () => {
+ 
+  const inputEvent = (event) => {
+    console.log(event.target.name)
+  }
+  
+  const[name,setName] = React.useState()
+  
+ const onSubmit = (event) => {
+  setName = event;
+  alert("submitted")
+ }
   const axios = require('axios')
   
   const OverlayOne = () => (
@@ -19,21 +30,17 @@ const Navbar = () => {
   const [overlay, setOverlay] = React.useState(<OverlayOne/>)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const[phoneNo,setPhoneNo] = React.useState('')
+  
   const url = 'https://findtheflat.online/otp/send'
     const SendOtp = () => {
       axios.post(url).then(res=>{
         setOutput(res.data)}).then(console.log)
-
-
-
-
-
-    }   
+}   
 
 
     return (
 <> 
-<Flex flexDirection={'column'}> 
+<Flex  bgGradient='linear(purple.100 0%, orange.100 25%, yellow.100 50%)' h='100vh' flexDirection={'column'}> 
 <Flex justifyContent={"space-between"} flexDirection={"row"}     
   height={"fit-content"} w='100%'  p={4} color='black' boxShadow="dark-lg"  rounded="md" bg="purple.200"> 
  
@@ -61,7 +68,7 @@ const Navbar = () => {
   alt='Dan Abramov'
 />
 
-<Heading mt={'15px'} fontStyle={'mono'}   fontSize={'2xl'}> Dan Abramov </Heading>  
+<Heading mt={'15px'} fontStyle={'mono'}   fontSize={'2xl'}> {name} </Heading>  
 
 </Box> </Center>
 <Flex mt={'20px'} flexDirection={'row'} justifyContent={'center'}> 
@@ -72,7 +79,46 @@ const Navbar = () => {
 
 </Flex>
 <Center> 
-<Button bg={'purple.100'} mt={'20px'} width={'100px'}> Edit Profile </Button>
+
+
+<Box flexDirection={"row"} > 
+<Button 
+          mt={'20px'}
+          bg={'purple.100'}
+          ml='4'
+          onClick={() => {
+            setOverlay(<OverlayOne />)
+            onOpen()
+          }}
+        >
+         Edit Profile 
+        </Button>
+        <Modal isCentered isOpen={isOpen} onClose={onClose}>
+          {overlay}
+          <ModalContent>
+            <ModalHeader>  </ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+            <InputGroup>
+          
+         
+     
+    <Input type="name" placeholder="name" onChange={(e)=>setName( e.target.value )} />
+  </InputGroup>
+            
+              
+<Button bg={'pink.100'} mt={'40px'} onClick={(e)=> onSubmit()} borderRadius={'22px'}> Done  </Button>
+            </ModalBody>
+            <ModalFooter>
+             
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+        
+         
+
+
+</Box>
 </Center>
 
  

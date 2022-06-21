@@ -1,70 +1,116 @@
-import { Box,Badge,Image,StarIcon } from '@chakra-ui/react'
+import React from "react";
+import {
+    Box,
+    Flex,
+    AspectRatio,
+    Image,
+    Text,
+    Link,
+    Button,
+    Stack,
+    SimpleGrid,
+    useColorModeValue,
+    Heading,
+    EmailIcon,
+    Center,
+    Select,
+    Divider,
+    Input,
+    SearchIcon,
+    TriangleDownIcon,
+  } from "@chakra-ui/react";
 
-function AirbnbExample() {
-    const property = {
-      imageUrl: 'https://bit.ly/2Z4KKcF',
-      imageAlt: 'Rear view of modern home with pool',
-      beds: 3,
-      baths: 2,
-      title: 'Modern home in city center in the heart of historic Los Angeles',
-      formattedPrice: '$1,900.00',
-      reviewCount: 34,
-      rating: 4,
-    }
+
+
+const Property = () => {
+return ( 
+    <>
+   
+   
+
   
-    return (
-      <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-        <Image src={property.imageUrl} alt={property.imageAlt} />
+<Center> 
+  <Flex width={"1000px"} mb={'400px'} height={'500px'} mt={'60px'} bg={"purple.200"} flexDirection={'column'} justifyContent={'fit-content'}> 
+  <Box> <Text mt={'20px'} ml={"40px"} color={'black'} fontFamily={"mono"} fontSize={"xl"}> 2 BHK at Pune Residency </Text></Box>
+  <Divider  colorScheme={'black'} mt={'20px'} orientation='horizontal' />
+ 
   
-        <Box p='6'>
-          <Box display='flex' alignItems='baseline'>
-            <Badge borderRadius='full' px='2' colorScheme='teal'>
-              New
-            </Badge>
-            <Box
-              color='gray.500'
-              fontWeight='semibold'
-              letterSpacing='wide'
-              fontSize='xs'
-              textTransform='uppercase'
-              ml='2'
-            >
-              {property.beds} beds &bull; {property.baths} baths
-            </Box>
-          </Box>
+      <Flex mt={'20px'} flexDirection={"row"} justifyContent={'space-between'}>
+       <Box  ml={"20px"} textAlign={'center'} fontSize={'xl'}> inches </Box> <Divider orientation='vertical' />
+       <Box textAlign={'center'} fontSize={'xl'}> inches</Box> <Divider colorScheme={'white'} orientation='vertical' />
+
+       <Box mr={"20px"} fontSize={'xl'}> inches </Box> 
+
+        
+      </Flex>
+      <Divider colorScheme={'black'} mt={'20px'} orientation='horizontal' />
+
+ 
+ <Flex  >   
+ <Flex width={'50%'}> 
+ <Box borderWidth={"20px"} borderColor={'purple.200'} > <Image  src="https://picsum.photos/400/300/?blur"/>  </Box>
+ 
+ </Flex>
+ <Flex width={"50%"} borderwidth={'2px'} borderColor={'white'} flexDirection={'column'} > 
+ 
+ <Flex  mt={'50px'} flexDirection={"row"} justifyContent={'space-between'}>
+ <Flex textAlign={'center'} > <Image src='https://i.ibb.co/f4gLsDc/Sofa.png'/> <Text mt={'30px'} ml={'15px'} fontSize={'xl'}> Semi Furnished </Text> </Flex> <Divider orientation='vertical' />
+       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/VMC7c46/Apartment.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> 2 BHK </Text> </Flex> <Divider orientation='vertical' />
+       
+        
+      </Flex>
+      <Flex mt={'70px'} flexDirection={"row"} justifyContent={'space-between'}>
+       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/Bngkf7J/Vector.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> All </Text> </Flex> <Divider orientation='vertical' />
+       <Flex textAlign={'center'} > <Image src='https://i.ibb.co/FWXmPjg/Lease.png'/> <Text mt={'30px'} fontSize={'xl'} ml={'15px'}> Ready to Move  </Text> </Flex> <Divider orientation='vertical' />
+
+       
+        
+      </Flex>
+      
+      <Flex mt={'40px'} flexDirection={'row'}  justifyContent={'space-between'}> <Button width={'250px'}  > Contact Owner </Button> 
+ <Button borderwidth={'1px'} width={'50px'}  borderColor={'white'} variant={'outline'} > <Image src='https://i.ibb.co/h8yt49m/Vector-1.png'/></Button> <Divider orientation='vertical' />
+ <Button borderwidth={'1px'} width={'50px'} borderColor={'white'} variant={'outline'} mr={'40px'}> <Image src='https://i.ibb.co/NWgrV9V/Location.png'/></Button>
+ 
+ 
+ 
+ </Flex>
+ 
+ 
+ 
+
+ </Flex>
+ 
+ 
+ 
+ 
+ 
+  </Flex>
   
-          <Box
-            mt='1'
-            fontWeight='semibold'
-            as='h4'
-            lineHeight='tight'
-            noOfLines={1}
-          >
-            {property.title}
-          </Box>
   
-          <Box>
-            {property.formattedPrice}
-            <Box as='span' color='gray.600' fontSize='sm'>
-              / wk
-            </Box>
-          </Box>
   
-          <Box display='flex' mt='2' alignItems='center'>
-            {Array(5)
-              .fill('')
-              .map((_, i) => (
-                <StarIcon
-                  key={i}
-                  color={i < property.rating ? 'teal.500' : 'gray.300'}
-                />
-              ))}
-            <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-              {property.reviewCount} reviews
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-    )
-  }
-  export default AirbnbExample;
+  
+  
+  
+  </Flex>
+  </Center>
+
+
+
+
+
+
+
+
+
+
+    </>
+)
+
+
+
+
+
+
+}
+export default Property;
+
