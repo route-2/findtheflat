@@ -10,7 +10,8 @@ interface AppContextInterface{
     sendOtp : Function
     Log : Function,
     sessionid : string | null,
-    otp : string | null
+    otp : string | null,
+    Register : Function,
 
 }
 
@@ -71,6 +72,52 @@ export const RentalProvider = ({children}:Props)=>{
         
     }
 
+    const Register = async(phone,sessionId,otp,fullName,email) => {
+        try{
+            setName(fullName);
+            setEmail(email);
+            
+    
+     const body ={
+        phone: `+91${phone}`,
+        sessionId : `${sessionId.toString()}`,
+        otp : `${otp.toString()}`,
+        fullName: `${fullName.toString()}`,
+        email : `${email.toString()}`
+     }
+     const res = await axios.post(REGISTER_LOG,body)
+    
+    
+    if(res)
+    {   
+        return res.data
+    }}
+    catch(error)
+    {
+        console.log(error)
+    
+    }
+    
+    
+    
+        }
+     const CheckPhone = async(phone) =>
+        {
+            try {
+                const res = await axios.get(`${CHECK_PHONE}/+91${phone}`)
+                if(res)
+                {
+                  return res.data
+                }
+            }
+            catch(error)
+            {
+                console.log(error)
+            }
+           
+    
+        }
+
     return(
         <RentalContext.Provider value={{
             phoneNo,
@@ -79,6 +126,7 @@ export const RentalProvider = ({children}:Props)=>{
             Log,
             sessionid,
             otp,
+            Register,
         }} >
             {children}
         </RentalContext.Provider>
