@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { sendOtp } from '../pages/auth.api';
+import { CheckPhone, sendOtp } from '../pages/auth.api';
 import React from 'react';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
@@ -25,7 +25,13 @@ const Navbar = () => {
   const url = 'https://findtheflat.online/otp/send'
    
 
+const clickHandler = async ()=> {
+  const datasendOtp = await sendOtp(phoneNo)
+  const checkPhone = await CheckPhone(phoneNo)
+  console.log(datasendOtp)
+  console.log(checkPhone)
 
+}
 
 
      
@@ -66,10 +72,10 @@ const Navbar = () => {
   </InputGroup>
             
               
-<Button bg={'pink.100'} mt={'40px'} onClick={()=> sendOtp(phoneNo)} borderRadius={'22px'}> Send OTP  </Button>
+<Button bg={'pink.100'} mt={'40px'} onClick={()=> clickHandler()} borderRadius={'22px'}> Send OTP  </Button>
             </ModalBody>
             <ModalFooter>
-              <Button > Next </Button>
+             
             </ModalFooter>
           </ModalContent>
         </Modal>

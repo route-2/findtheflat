@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { SEND_OTP_URL } from './constants'
+import { CHECK_PHONE, SEND_OTP_URL } from './constants'
 import { LOGIN_OTP } from './constants'
 import { REGISTER_LOG } from './constants'
 
@@ -66,3 +66,20 @@ catch(error)
 
 
     }
+    export const CheckPhone = async(phone) =>
+    {
+        try {
+            const res = await axios.get(`${CHECK_PHONE}/+91${phone}`)
+            if(res)
+            {
+              return res.data
+            }
+        }
+        catch(error)
+        {
+            console.log(error)
+        }
+       
+
+    }
+   

@@ -4,6 +4,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import React from "react";
 import { Log } from "./auth.api";
+import { CheckPhone } from "./auth.api";
 
 function Login () {
     const OverlayOne = () => (
