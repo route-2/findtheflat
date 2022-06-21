@@ -21,10 +21,14 @@ export const sendOtp = async (phone) => {
 export const Log = async(phone,sessionId,otp) => {
     
     try {
-        
+        let totp = otp.toString();
+        let tsession = sessionId.toString();
+        let tphone = phone.toString();
+        console.log(totp);
         const body = {
-          phone: `+91${phone}`,
-          sessionId,otp
+          phone: tphone,
+          sessionId: tsession,
+          otp : totp
         }
        
         
