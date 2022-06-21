@@ -3,7 +3,7 @@ import { Text,Flex,Input,Button,Heading } from '@chakra-ui/react';
 
 const LoginPage = () => {
     return ( 
-        <Flex>
+        <Flex flexDirection={'column'} width={'50%'} >
              <Text> Hello </Text>
       <Text> Enter OTP sent on </Text>
       <Input placeholder="otp"/>

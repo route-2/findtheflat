@@ -8,6 +8,8 @@ interface AppContextInterface{
     phoneNo : string | null
     setPhoneNo : Function
     sendOtp : Function
+    Log : Function,
+    
 }
 
 const RentalContext: Context<AppContextInterface | null>= createContext<AppContextInterface|null>(null);
@@ -38,6 +40,33 @@ export const RentalProvider = ({children}:Props)=>{
         } catch (error) {
           console.log(error)
         }
+    }
+
+    const Log = async(phone,sessionId,otp) => {
+    
+        try {
+            let totp = otp.toString();
+            let tsession = sessionId.toString();
+            let tphone = phone.toString();
+            setSessionid(tsession);
+            setOtp(totp);
+            console.log(totp);
+            const body = {
+              phone: tphone,
+              sessionId: tsession,
+              otp : totp
+            }       
+            const res = await axios.post(LOGIN_OTP,body)
+        
+            if (res) 
+            {
+              return res.data
+            }
+          } 
+          catch (error) {
+            console.log(error)
+          }
+        
     }
 
     return(
