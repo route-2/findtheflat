@@ -24,7 +24,7 @@ const Login = () => {
         borderRadius={8}
         boxShadow="lg"
         w={'400px'}
-        h={'400px'}
+        h={'500px'}
       >
         <Heading mb={6}>Log In</Heading>
         <Input
@@ -42,6 +42,7 @@ const Login = () => {
         <Button colorScheme="purple" mb={8}>
           Log In
         </Button>
+        New to this site? <Button mt={4} mb={4} colorScheme="purple" href='./Register'> Register </Button>
         <FormControl display="flex" alignItems="center">
           <FormLabel htmlFor="dark_mode" mb="0">
             Enable Dark Mode?
