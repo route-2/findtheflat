@@ -27,9 +27,12 @@ const Navbar = () => {
 
 const clickHandler = async ()=> {
   const datasendOtp = await sendOtp(phoneNo)
-  const checkPhone = await CheckPhone(phoneNo)
+  try{const checkPhone = await CheckPhone(phoneNo)
   console.log(datasendOtp)
   console.log(checkPhone)
+}catch(err){
+    console.log(err)
+  }
 
 }
 
@@ -68,7 +71,7 @@ const clickHandler = async ()=> {
       pointerEvents="none"
       children={<PhoneIcon color="gray.300" />}
     />
-    <Input type="phone" placeholder="Phone number" onChange={(e)=>setPhoneNo( e.target.value )} />
+    <Input type="phone" placeholder="Phone number" onChange={(e)=>setPhoneNo(e.target.value )} />
   </InputGroup>
             
               
