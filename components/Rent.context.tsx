@@ -9,7 +9,9 @@ interface AppContextInterface{
     setPhoneNo : Function
     sendOtp : Function
     Log : Function,
-    
+    sessionid : string | null,
+    otp : string | null
+
 }
 
 const RentalContext: Context<AppContextInterface | null>= createContext<AppContextInterface|null>(null);
@@ -73,7 +75,10 @@ export const RentalProvider = ({children}:Props)=>{
         <RentalContext.Provider value={{
             phoneNo,
             setPhoneNo,
-            sendOtp
+            sendOtp,
+            Log,
+            sessionid,
+            otp,
         }} >
             {children}
         </RentalContext.Provider>
